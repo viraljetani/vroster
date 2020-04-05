@@ -8,9 +8,9 @@ class Organization extends Model
 {
     use SoftDeletes;
 
-    public function contacts()
+    public function employees()
     {
-        return $this->hasMany(Contact::class);
+        return $this->hasMany(Employee::class);
     }
 
     public function scopeFilter($query, array $filters)

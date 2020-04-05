@@ -2,7 +2,7 @@
 
 use App\User;
 use App\Account;
-use App\Contact;
+use App\Employee;
 use App\Organization;
 use Illuminate\Database\Seeder;
 
@@ -10,25 +10,25 @@ class DatabaseSeeder extends Seeder
 {
     public function run()
     {
-        $account = Account::create(['name' => 'Acme Corporation']);
+        $account = Account::create(['name' => 'Vritti Enterprise']);
 
         factory(User::class)->create([
             'account_id' => $account->id,
-            'first_name' => 'John',
-            'last_name' => 'Doe',
+            'first_name' => 'Vimal',
+            'last_name' => 'Vyas',
             'email' => 'johndoe@example.com',
             'owner' => true,
         ]);
 
         factory(User::class, 5)->create(['account_id' => $account->id]);
 
-        $organizations = factory(Organization::class, 100)
+        $organizations = factory(Organization::class, 3)
             ->create(['account_id' => $account->id]);
 
-        factory(Contact::class, 100)
+        factory(Employee::class, 15)
             ->create(['account_id' => $account->id])
-            ->each(function ($contact) use ($organizations) {
-                $contact->update(['organization_id' => $organizations->random()->id]);
+            ->each(function ($employee) use ($organizations) {
+                $employee->update(['organization_id' => $organizations->random()->id]);
             });
     }
 }

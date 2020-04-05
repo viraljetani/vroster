@@ -1,16 +1,14 @@
-# Ping CRM
+# Vroster Time Tracking
 
-A demo application to illustrate how Inertia.js works.
-
-![](https://raw.githubusercontent.com/inertiajs/pingcrm/master/screenshot.png)
+An application for time tracking your employees.
 
 ## Installation
 
 Clone the repo locally:
 
 ```sh
-git clone https://github.com/inertiajs/pingcrm.git pingcrm
-cd pingcrm
+git clone https://....
+cd vroster
 ```
 
 Install PHP dependencies:
@@ -74,7 +72,7 @@ You're ready to go! Visit Ping CRM in your browser, and login with:
 
 ## Running tests
 
-To run the Ping CRM tests, run:
+To run the tests, run:
 
 ```
 phpunit

@@ -16,8 +16,8 @@ class Account extends Model
         return $this->hasMany(Organization::class);
     }
 
-    public function contacts()
+    public function employees()
     {
-        return $this->hasMany(Contact::class);
+        return $this->hasMany(Employee::class);
     }
 }
